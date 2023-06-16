@@ -38,7 +38,7 @@ export default {
 
   async mounted() {
 
-    console.log(process.env.POSTGRES_URL);
+    console.log("AAAAAAAAAAA" + process.env.POSTGRES_URL);
 
     const {rows} = await sql`SELECT * from users`;
 
