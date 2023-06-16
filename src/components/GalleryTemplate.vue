@@ -37,8 +37,8 @@ export default {
   name: "GalleryTemplate",
 
   async mounted() {
-    const {rows} = await sql`SELECT *
-                             from users`;
+
+    const {rows} = await sql`SELECT * from users`;
 
     console.log(rows);
   }

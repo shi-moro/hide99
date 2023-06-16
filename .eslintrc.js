@@ -7,4 +7,11 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'eslint:recommended',
   ],
+  parserOptions: {
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false
+  },
+  rules: {
+    'vue/multi-word-component-names': 0
+  }
 }
