@@ -1,5 +1,5 @@
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import VueRouter from 'vue-router'
 
 const routes = [
   {
@@ -18,9 +18,8 @@ const routes = [
   },
 ]
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+const router = new VueRouter({
   routes,
 })
 
-export default router
+export default router;

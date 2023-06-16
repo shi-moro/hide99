@@ -1,6 +1,8 @@
 <template>
-  <HelloWorld />
-  <GalleryTemplate />
+  <div>
+    <HelloWorld />
+    <GalleryTemplate />
+  </div>
 </template>
 
 <script setup>

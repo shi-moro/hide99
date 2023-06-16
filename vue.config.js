@@ -1,5 +1,14 @@
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   transpileDependencies: ["vuetify"],
+
+  configureWebpack: {
+    plugins: [
+      new Dotenv()
+    ],
+
+  },
 
   pluginOptions: {
     i18n: {

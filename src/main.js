@@ -6,15 +6,14 @@
 
 // Components
 import App from './App.vue'
+import router from "@/router";
+import vuetify from "@/plugins/vuetify";
 
 // Composables
-import { createApp } from 'vue'
+import Vue from 'vue'
+import VueRouter from "vue-router";
 
 // Plugins
-import { registerPlugins } from '@/plugins'
+Vue.use(VueRouter);
 
-const app = createApp(App)
-
-registerPlugins(app)
-
-app.mount('#app')
+new Vue({router, vuetify, render: h => h(App)}).$mount('#app')
