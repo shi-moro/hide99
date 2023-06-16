@@ -38,6 +38,8 @@ export default {
 
   async mounted() {
 
+    console.log(process.env.VUE_APP_POSTGRES_DATABASE);
+
     const {rows} = await sql`SELECT * from users`;
 
     console.log(rows);
