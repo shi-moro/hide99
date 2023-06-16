@@ -6,10 +6,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "serve": "vue-cli-service serve"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "@vercel/postgres": "^0.3.1",
     "core-js": "^3.29.0",
     "roboto-fontface": "*",
     "vue": "^3.2.0",
