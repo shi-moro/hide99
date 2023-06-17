@@ -36,6 +36,7 @@
 import ws from 'ws';  // undici also works
 import { neonConfig, Pool } from '@neondatabase/serverless';
 
+export const config = { runtime: 'edge' };
 export default {
   name: "GalleryTemplate",
 
