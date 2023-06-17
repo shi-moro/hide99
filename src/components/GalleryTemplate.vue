@@ -31,10 +31,7 @@
 </template>
 
 <script>
-//import { sql } from "@vercel/postgres";
-//import { createPool } from '@vercel/postgres';
-import ws from 'ws';  // undici also works
-import { neonConfig, Pool } from '@neondatabase/serverless';
+import { createClient } from "@vercel/kv";
 
 export const config = { runtime: 'edge' };
 export default {
@@ -42,17 +39,16 @@ export default {
 
   async mounted() {
 
+    console.log(process.env.VUE_APP_KV_REST_API_TOKEN);
 
-    neonConfig.webSocketConstructor = ws;
-    console.log("AAAAAAAAAAA " + process.env.VUE_APP_TEST_VALUE);
-
-    const pool = new Pool({
-      connectionString: process.env.VUE_APP_POSTGRES_URL,
+    const users = createClient({
+      url: JSON.stringify(process.env.VUE_APP_KV_REST_API_URL),
+      token: JSON.stringify(process.env.VUE_APP_KV_REST_API_TOKEN),
     });
 
-    const {rows} = await pool.query`SELECT * from users`;
+    const user = await users.hgetall('user:me');
 
-    console.log(rows);
+    console.log(user);
   }
 }
 
