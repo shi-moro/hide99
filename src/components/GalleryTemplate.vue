@@ -32,20 +32,24 @@
 
 <script>
 //import { sql } from "@vercel/postgres";
-import { createPool } from '@vercel/postgres';
+//import { createPool } from '@vercel/postgres';
+import ws from 'ws';  // undici also works
+import { neonConfig, Pool } from '@neondatabase/serverless';
 
 export default {
   name: "GalleryTemplate",
 
   async mounted() {
 
+
+    neonConfig.webSocketConstructor = ws;
     console.log("AAAAAAAAAAA " + process.env.VUE_APP_TEST_VALUE);
 
-    const pool = createPool({
+    const pool = new Pool({
       connectionString: process.env.VUE_APP_POSTGRES_URL,
     });
 
-    const {rows} = await pool.sql`SELECT * from users`;
+    const {rows} = await pool.query`SELECT * from users`;
 
     console.log(rows);
   }

@@ -8,17 +8,25 @@
     "lint": "eslint . --fix --ignore-path .gitignore",
     "serve": "vue-cli-service serve"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "@neondatabase/serverless": "^0.4.15",
     "@vercel/postgres": "^0.3.1",
     "core-js": "^3.8.3",
     "dotenv-webpack": "^8.0.1",
+    "pg": "^8.11.0",
     "roboto-fontface": "*",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.15",
     "vuex": "^3.6.2",
-    "webfontloader": "^1.0.0"
+    "webfontloader": "^1.0.0",
+    "ws": "^8.13.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.16",
