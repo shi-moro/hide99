@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import { sql } from "@vercel/postgres";
+//import { sql } from "@vercel/postgres";
+import { createPool } from '@vercel/postgres';
 
 export default {
   name: "GalleryTemplate",
@@ -40,7 +41,11 @@ export default {
 
     console.log("AAAAAAAAAAA " + process.env.VUE_APP_TEST_VALUE);
 
-    const {rows} = await sql`SELECT * from users`;
+    const pool = createPool({
+      connectionString: process.env.VUE_APP_POSTGRES_URL,
+    });
+
+    const {rows} = await pool.sql`SELECT * from users`;
 
     console.log(rows);
   }
