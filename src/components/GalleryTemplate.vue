@@ -38,7 +38,7 @@ export default {
 
   async mounted() {
 
-    console.log("AAAAAAAAAAA " + process.env.TEST_VALUE);
+    console.log("AAAAAAAAAAA " + process.env.VUE_APP_TEST_VALUE);
 
     const {rows} = await sql`SELECT * from users`;
 
